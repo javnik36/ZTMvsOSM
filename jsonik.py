@@ -1,7 +1,7 @@
 import json
 import re
 
-plik1 = open("export-small.geojson", 'r', encoding="utf-8")
+plik1 = open("export.geojson", 'r', encoding="utf-8")
 plik2 = open("przystanki_ktotka_nazwa.txt", 'r')
 
 
@@ -10,6 +10,19 @@ plik1.close()
 
 decoded = json.loads(data)
 
+existed = []
+not_ref = []
+
+for jsonek in decoded:
+    item = jsonek
+    try:
+        tagi = item["tags"]
+        existed.append(tagi["ref"])
+    except:
+        ids = item["id"]
+        not_ref.append(ids)
+        print("Not fouded!")
+        pass
 
 lista_id = []
 
@@ -19,3 +32,19 @@ for line in plik2:
     lista_id.append(str(add))
 
 plik2.close()
+
+not_in_ztm = []
+
+for key in existed:
+    if key in lista_id:
+        pass
+    else:
+        not_in_ztm.append(key)
+
+not_existed = []
+
+for key in lista_id:
+    if key in existed:
+        pass
+    else:
+        not_existed.append(key)
