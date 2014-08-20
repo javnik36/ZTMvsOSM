@@ -2,3 +2,4 @@
 
 *.txt
 *.geojson
+/__pycache__

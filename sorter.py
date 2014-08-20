@@ -1,4 +1,5 @@
-def sortuj(plik):
+def sortuj(plik, stop_position, bad_stop_position, bus_stop, tram_stop, bad_stop, platform, rail_platform, bad_platform, error):
+
     import json
     import re
 
@@ -10,20 +11,18 @@ def sortuj(plik):
 
     decoded = json.loads(data)
 
-
-    stop_position = []
-    bad_stop_position = []
-
-    bus_stop = []
-    tram_stop = []
-    bad_stop = []
-
-    platform = []
-    rail_platform = []
-    bad_platform = []
-
-    error = []
-
+##    stop_position = []
+##    bad_stop_position = []
+##
+##    bus_stop = []
+##    tram_stop = []
+##    bad_stop = []
+##
+##    platform = []
+##    rail_platform = []
+##    bad_platform = []
+##
+##    error = []
 
     for item in decoded:
         if re.search("node/", item["id"]):
@@ -77,3 +76,4 @@ def sortuj(plik):
     print(str(len(bad_stop)) + ' złych stop')
     print(str(len(bad_platform)) + ' złych platform')
     print(str(len(error)) + ' błędów')
+
