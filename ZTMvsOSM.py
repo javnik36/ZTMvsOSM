@@ -35,13 +35,14 @@ bad_name_plat = []
 brak_id = []
 
 
+ztm = input("Podaj ścieżkę do pliku ztm: (pamiętaj o rozszerzeniu :)   ")
+input_json = input("Podaj ścieżkę do pliku geojson: (pamiętaj o rozszerzeniu :)   ")
 
-
-t0.extract("RA140825.txt", "stopy.txt")
+t0.extract(ztm, "stopy.txt")
 t1.make_id_base("stopy.txt", baza)
 print("________________________________")
 #print(len(baza))
-t2.sortuj("complete marki.geojson", stop_position, bad_stop_position, bus_stop, tram_stop, bad_stop, platform,rail_platform, bad_platform, error)
+t2.sortuj(input_json, stop_position, bad_stop_position, bus_stop, tram_stop, bad_stop, platform,rail_platform, bad_platform, error)
 print("________________________________")
 print("Badana zmienna: stop_position") 
 t3.checker(baza, stop_position, bez_ref_stops, small_ref, bad_name_stops, error)

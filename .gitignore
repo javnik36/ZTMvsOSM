@@ -2,4 +2,6 @@
 
 *.txt
 *.geojson
+jsonik.py
 /__pycache__
+/web/*.geojson

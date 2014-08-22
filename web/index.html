@@ -1,0 +1,86 @@
+<html>
+<head>
+        <meta charset="utf-8">
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<!--[if lte IE 8]>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+
+		<script type="text/javascript" src="leaflet.ajax.js"></script>
+        <script type="text/javascript" src="Leaflet.EditInOSM.js"></script>
+        <link rel="stylesheet" href="Leaflet.EditInOSM.css" />
+
+		<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		html, body, #map {
+			height: 100%;
+		}
+		</style>
+</head>
+<body>
+
+<div id="map"></div>
+	<script type="text/javascript">
+	var map = L.map('map', {
+        editInOSMControlOptions: {zoomThreshold : 16}}).setView([52.2298, 21.0118], 11);
+
+  var bw = L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+}).addTo(map);
+
+var mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+});
+
+	var tl = L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20
+});
+
+
+
+	function popUp(feature, layer) {
+    layer.bindPopup(feature.properties.name + feature.properties.ref);
+  }
+  
+  function ref_see(feature,layer) {
+		layer.bindPopup(feature.properties.ref)
+	}
+
+
+	function allpopup(feature, layer){
+	if (feature.properties) {
+								var popupString = '<div class="popup">';
+                for (var k in feature.properties) {
+                    var v = feature.properties[k];
+                    popupString += k + ': ' + v + '<br />';
+                }
+                popupString += '</div>';
+  layer.bindPopup(popupString);
+	}}
+
+  var refp = new L.GeoJSON.AJAX("bez_ref_plat.geojson", {onEachFeature:allpopup});
+  var refs = new L.GeoJSON.AJAX("bez_ref_stops.geojson", {onEachFeature:allpopup});
+  var namep = new L.GeoJSON.AJAX("bad_name_plat.geojson", {onEachFeature:allpopup});
+  var names = new L.GeoJSON.AJAX("bad_name_stops.geojson", {onEachFeature:allpopup});
+  var id = new L.GeoJSON.AJAX("brak_id.geojson", {onEachFeature:allpopup});
+  var errors = new L.GeoJSON.AJAX("another_error.geojson", {onEachFeature:allpopup});
+	var smerf = new L.GeoJSON.AJAX("small_ref.geojson", {onEachFeature:allpopup});
+
+
+  var baza = { "Black&White Mapnik" : bw , "Mapnik" : mapnik, "Stamen TonerLite": tl};
+  var all = {"Brakujące przystanki" : id, "Zły ref" : smerf, "Brakujący ref w tagu stop/~position" : refs, "Zła nazwa przystanku w tagu stop/~position": names, "Brakujący ref w tagu platform" : refp, "Zła nazwa przystanku w tagu platform": namep , "Inne błędy" : errors}
+  
+  var cl = L.control.layers(baza, all);
+  cl.addTo(map);
+</script>
+
+</body>
+</html>
