@@ -5,3 +5,4 @@
 jsonik.py
 /__pycache__
 /web/*.geojson
+!/example
