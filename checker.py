@@ -6,6 +6,8 @@ def checker(baza_id, zmienna_badana, bez_ref, small_ref, bad_name, errors):
     import re
 
     przed = len(errors)
+
+    #print(str(len(baza_id)))
     
     for item in zmienna_badana:
         itag = item["properties"]

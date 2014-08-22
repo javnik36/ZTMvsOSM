@@ -15,6 +15,7 @@ def take(baza_id, plik, do_jsona):
 
     zapis = []
     
+    
     file = open(plik, 'r')
     data = file.readlines()
     file.close()

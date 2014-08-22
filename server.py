@@ -7,6 +7,6 @@ def server(PORT=8000):
 
     httpd = socketserver.TCPServer(("", PORT), Handler)
 
-    print("serving at port", PORT)
+    print("Server started at port", PORT)
     httpd.serve_forever()
 

@@ -9,20 +9,8 @@ def sortuj(plik, stop_position, bad_stop_position, bus_stop, tram_stop, bad_stop
     plik1.close()
 
 
-    decoded = json.loads(data)
-
-##    stop_position = []
-##    bad_stop_position = []
-##
-##    bus_stop = []
-##    tram_stop = []
-##    bad_stop = []
-##
-##    platform = []
-##    rail_platform = []
-##    bad_platform = []
-##
-##    error = []
+    raw = json.loads(data)
+    decoded = raw["features"]
 
     for item in decoded:
         if re.search("node/", item["id"]):
