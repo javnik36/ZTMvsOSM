@@ -11,6 +11,9 @@ def make_id_base(plik, zmienna_listy):
 
 
 def take(baza_id, plik, do_jsona):
+    '''
+    Tworzy bazę brakujących przystanków w osm.
+    '''
     import re
 
     zapis = []

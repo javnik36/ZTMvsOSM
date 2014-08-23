@@ -37,6 +37,7 @@ brak_id = []
 
 ztm = input("Podaj ścieżkę do pliku ztm: (pamiętaj o rozszerzeniu :)   ")
 input_json = input("Podaj ścieżkę do pliku geojson: (pamiętaj o rozszerzeniu :)   ")
+start = input("Wystartować serwer po zakończeniu przetwarzania? (t/n) ")
 
 t0.extract(ztm, "stopy.txt")
 t1.make_id_base("stopy.txt", baza)
@@ -60,7 +61,7 @@ print("Badana zmienna: bad_stop_position")
 t3.checker(baza, bad_stop_position, another_error, another_error, another_error, error)
 print("________________________________")
 #print(len(baza))
-t1.take(baza, "przystanki_ktotka_nazwa.txt", brak_id)
+t1.take(baza, "stopy.txt", brak_id)
 t4.make_json(brak_id, "brak_id.geojson")
 t4.make_json(bez_ref_stops, "bez_ref_stops.geojson")
 t4.make_json(bez_ref_plat, "bez_ref_plat.geojson")
@@ -69,7 +70,6 @@ t4.make_json(bad_name_plat, "bad_name_plat.geojson")
 t4.make_json(another_error, "another_error.geojson")
 t4.make_json(small_ref, "small_ref.geojson")
 
-start = input("Wystartować serwer? (t/n) ")
 if start == 't':
     t5.server()
 else:
