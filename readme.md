@@ -1,6 +1,6 @@
 ZTMvsOSM
 -------------
-![Demo][demo.png]
+![Demo][/master/demo.png]
 
 Program sprawdza braki w przystankach między podanym geojsonem a bazą ZTMu i tworzy pliki .geojson z zaznaczonymi brakami, które można podejrzeć na leaflecie.
 
@@ -48,4 +48,6 @@ Wykorzystane:
 
 Mój kod:
 -------------
-[Copyright (c) 2014 javnik36](../blob/master/licence)
+[Copyright (c) 2014 javnik36][]
+
+[Copyright (c) 2014 javnik36][https://github.com/javnik36/ZTMvsOSM/blob/master/licence]
