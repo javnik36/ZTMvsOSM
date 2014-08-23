@@ -1,6 +1,6 @@
 ZTMvsOSM
 -------------
-![Demo][/master/demo.png]
+![Demo](https://github.com/javnik36/ZTMvsOSM/blob/master/demo.png)
 
 Program sprawdza braki w przystankach między podanym geojsonem a bazą ZTMu i tworzy pliki .geojson z zaznaczonymi brakami, które można podejrzeć na leaflecie.
 
@@ -28,7 +28,7 @@ Szczegóły
 - nie jestem programistą więc błędów pewnie sporo, nawet w danych wyjściowych więc mapki traktować trochę z przymrużeniem oka...nie ufać im na 100% :)
 - wiem, że cały proces może być dość upierdliwy i czasochłonny, ale nie mam chwilowo werwy, żeby przepisać kod na taki, żeby był bardziej bezobsługowy
 
-[extract.py](../blob/master/extract.py)
+[extract.py](https://github.com/javnik36/ZTMvsOSM/blob/master/extract.py)
 -------------
 Niektórym może się przydać sam extract.py. Dane z ztmu przekształca do formatu:
 ```
@@ -48,6 +48,4 @@ Wykorzystane:
 
 Mój kod:
 -------------
-[Copyright (c) 2014 javnik36][]
-
-[Copyright (c) 2014 javnik36][https://github.com/javnik36/ZTMvsOSM/blob/master/licence]
+[Copyright (c) 2014 javnik36](https://github.com/javnik36/ZTMvsOSM/blob/master/licence)
