@@ -18,7 +18,7 @@ http://localhost:8000/web/index.html
 ```
 7. 'Baw się' zawartością!
 
-PS. Dla leniwych opublikuję niedługo pliki json z tą samą zawartością. Będzie można chociaż przez githuba podejrzeć.
+~~PS. Dla leniwych opublikuję niedługo pliki json z tą samą zawartością. Będzie można chociaż przez githuba podejrzeć.~~
 
 Szczegóły
 -------------
