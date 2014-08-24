@@ -6,3 +6,4 @@ jsonik.py
 /__pycache__
 /web/*.geojson
 !/demo/*.geojson
+!statystyki.txt

@@ -1,0 +1,14 @@
+//Statystyki
+//Wartoœci od gótu do do³u:
+//data raportu - liczba przystanków w ztm - liczba bus/tram stop w osm - liczba bus/tram stop z ref w osm - liczba stop_position w osm - liczba stop_position z ref w osm - liczba platform w osm - liczba platform z ref w osm
+//brak dok³adnoœci spowodowany brakiem mo¿liwoœci odrzucenia przystanków nie nale¿¹cych do ztm
+
+24.08.14  17:43
+5450
+2678
+2379
+4571
+4475
+2155
+1386
+###################
