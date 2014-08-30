@@ -73,10 +73,11 @@ var mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   var id = new L.GeoJSON.AJAX("brak_id.geojson", {onEachFeature:allpopup});
   var errors = new L.GeoJSON.AJAX("another_error.geojson", {onEachFeature:allpopup});
 	var smerf = new L.GeoJSON.AJAX("small_ref.geojson", {onEachFeature:allpopup});
+	var tempId = new L.GeoJSON.AJAX("brak_temp.geojson", {onEachFeature:allpopup});
 
 
   var baza = { "Black&White Mapnik" : bw , "Mapnik" : mapnik, "Stamen TonerLite": tl};
-  var all = {"Brakujące przystanki" : id, "Zły ref" : smerf, "Brakujący ref w tagu stop/~position" : refs, "Zła nazwa przystanku w tagu stop/~position": names, "Brakujący ref w tagu platform" : refp, "Zła nazwa przystanku w tagu platform": namep , "Inne błędy" : errors}
+  var all = {"Brakujące przystanki" : id, "Przystanki tymczasowe nie będące w bazie osm" : tempId, "Zły ref" : smerf, "Brakujący ref w tagu stop/~position" : refs, "Zła nazwa przystanku w tagu stop/~position": names, "Brakujący ref w tagu platform" : refp, "Zła nazwa przystanku w tagu platform": namep , "Inne błędy" : errors}
   
   var cl = L.control.layers(baza, all);
   cl.addTo(map);

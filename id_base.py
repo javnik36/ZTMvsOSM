@@ -10,13 +10,14 @@ def make_id_base(plik, zmienna_listy):
         zmienna_listy.append(str(add))
 
 
-def take(baza_id, plik, do_jsona):
+def take(baza_id, plik, json_output, json_output_temporary):
     '''
-    Tworzy bazę brakujących przystanków w osm.
+    Tworzy bazę brakujących przystanków w osm i bazę przystanków tymczasowych.
     '''
     import re
 
     zapis = []
+    temp = []
     
     
     file = open(plik, 'r')
@@ -28,7 +29,10 @@ def take(baza_id, plik, do_jsona):
         find = re.search("^[0-9]{6}", line)
         add = find.group()
         if add in baza_id:
-            zapis.append(line)
+            if add.isnumeric() and not re.search("^\d{4}5\d", add):
+                zapis.append(line)
+            else:
+                temp.append(line)
         else:
             continue
 
@@ -41,4 +45,12 @@ def take(baza_id, plik, do_jsona):
         
         #save = '''[{"type":"Feature"},"geometry":{"type":"Point","coordinates":[''' + splitted[1] + "," + splitted[2].rstrip("\n") + "]}}"
 
-        do_jsona.append(dicta)
+        json_output.append(dicta)
+
+    for item in temp:
+        splitted = []
+        splitted = item.split(', ')
+
+        dicta = {"type":"Feature", "properties" : {"ref":splitted[0] }, "geometry": {"type":"Point","coordinates": [float(splitted[2].rstrip("\n")), float(splitted[1])] }}
+        
+        json_output_temporary.append(dicta)

@@ -42,9 +42,10 @@ Może być pomocne przy dalszej obróbce.
 
 Zmiany
 -------------
-+/24.08/ dodałem [skrypt statystyk](https://github.com/javnik36/ZTMvsOSM/blob/master/stats.py). Opis w pliku wyjściowym (statystyki.txt)
-+/23.08/ poprawiłem błąd w jednym z plików. Teraz będzie wszystko działać ;)
-+/23.08/ dodałem geojsony utworzone za pomocą programu
++/30.08/ skrypt oddziela teraz przystanki tymczasowe i są one w innej kategorii<br> 
++/24.08/ dodałem [skrypt statystyk](https://github.com/javnik36/ZTMvsOSM/blob/master/stats.py). Opis w pliku wyjściowym (statystyki.txt)<br>
++/23.08/ poprawiłem błąd w jednym z plików. Teraz będzie wszystko działać ;)<br>
++/23.08/ dodałem geojsony utworzone za pomocą programu<br>
 
 Wykorzystane:
 -------------

@@ -33,6 +33,7 @@ small_ref = []
 bad_name_plat = []
 
 brak_id = []
+brak_temp = []
 
 
 ztm = input("Podaj ścieżkę do pliku ztm: (pamiętaj o rozszerzeniu :)   ")
@@ -61,8 +62,9 @@ print("Badana zmienna: bad_stop_position")
 t3.checker(baza, bad_stop_position, another_error, another_error, another_error, error)
 print("________________________________")
 #print(len(baza))
-t1.take(baza, "stopy.txt", brak_id)
+t1.take(baza, "stopy.txt", brak_id, brak_temp)
 t4.make_json(brak_id, "brak_id.geojson")
+t4.make_json(brak_temp, "brak_temp.geojson")
 t4.make_json(bez_ref_stops, "bez_ref_stops.geojson")
 t4.make_json(bez_ref_plat, "bez_ref_plat.geojson")
 t4.make_json(bad_name_stops, "bad_name_stops.geojson")
