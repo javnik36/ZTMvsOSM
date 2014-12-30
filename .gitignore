@@ -7,3 +7,4 @@ jsonik.py
 /web/*.geojson
 !/demo/*.geojson
 !statystyki.txt
+stopy.gpx

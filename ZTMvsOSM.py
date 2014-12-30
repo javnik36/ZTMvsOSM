@@ -39,8 +39,11 @@ brak_temp = []
 ztm = input("Podaj ścieżkę do pliku ztm: (pamiętaj o rozszerzeniu :)   ")
 input_json = input("Podaj ścieżkę do pliku geojson: (pamiętaj o rozszerzeniu :)   ")
 start = input("Wystartować serwer po zakończeniu przetwarzania? (t/n) ")
+gpxy = input("Stworzyć plik GPX z danych ZTM? (Wymaga modułu gpxpy!) (t/n)  ")
 
 t0.extract(ztm, "stopy.txt")
+if gpxy == 't':
+    t0.make_gps("stopy.txt", "GPXstops.gpx")
 t1.make_id_base("stopy.txt", baza)
 print("________________________________")
 #print(len(baza))

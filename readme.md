@@ -42,6 +42,7 @@ Może być pomocne przy dalszej obróbce.
 
 Zmiany
 -------------
++/30.12/ dodano skrypt tworzący plik gpx z danych ZTM (UWAGA! Potrzebny moduł [gpxpy](https://github.com/tkrajina/gpxpy)!)<br>
 +/30.08/ skrypt oddziela teraz przystanki tymczasowe i są one w innej kategorii<br> 
 +/24.08/ dodałem [skrypt statystyk](https://github.com/javnik36/ZTMvsOSM/blob/master/stats.py). Opis w pliku wyjściowym (statystyki.txt)<br>
 +/23.08/ poprawiłem błąd w jednym z plików. Teraz będzie wszystko działać ;)<br>

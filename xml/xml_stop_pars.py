@@ -11,26 +11,44 @@ import re
 data = parser(open('TEMP-XML.xml'))
 
 osm = data.osm
+nodes = osm.findAll('node')
+ways = osm.findAll('way')
+
 refs = []
+
+output = []
+
+
+for thing in nodes:
+  #osmid = str(thing['id'])
+  #lon = str(thing['lon'])
+  #lat = str(thing['lat'])
+
+  tag = thing.findAll('tag')
+  for tag_attrs in tag:
+    if str(tag_attrs['k']) == 'ref':
+      ref = tag_attrs['v']
+    if str(tag_attrs['k']) == 'network'
+
+            #refs.append(ref)
+
 
 
 ##MAKE regex working!
-for child in osm.children:
-  for child_child in child:
-    #ref = re.search("\ref", child_child)
-    #dig = re.search("\v="(\d{6})"")
-
-
-
-    if ref and dig:
-      refs.append(dig.addgroup(0))
-    else:
-      continue
-
-
-
-
+#for child in osm.children:
 #  print(child)
-#  print("KONIEC DZIECKA")
+#  print("KONIEC DZIECKA\n\n")
+
+
+
+  #try:
+    #find = child.find('tag', {'k':'ref'})
+    #value = re.search("\d{6}", str(find))
+    #strvalue = value.group()
+
+    #print(find)
+    #print(strvalue)
+  #except (TypeError, AttributeError):
+    #print("Błąd nazwy! Brak refu...")
 
 a = input("jeste glupi")
