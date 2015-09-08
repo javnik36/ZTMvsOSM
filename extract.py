@@ -11,7 +11,7 @@ def extract(plik_ztm, plik_wyjsciowy):
     '''
     import re
 
-    inp = open(plik_ztm, 'r', encoding="utf-8")
+    inp = open(plik_ztm, 'r', encoding="windows-1250")
     out = open(plik_wyjsciowy, 'w')
 
     print("Zaczynam!")
